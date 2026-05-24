@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-denoise"
+version = "0.1.0"
+description = "Adaptive image denoising: noise-type classifier routing between specialized U-Net models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Artem K", email = "artem.q2003@gmail.com" },
+]
+keywords = ["denoising", "image-denoising", "unet", "pytorch", "computer-vision"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.21",
+    "pillow>=9.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Tem-q/adaptive-denoise"
+
+[tool.setuptools.packages.find]
+include = ["adaptive_denoise*"]
+
+[tool.setuptools.package-data]
+adaptive_denoise = ["weights/*.pth"]
